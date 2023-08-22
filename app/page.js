@@ -187,7 +187,7 @@ import ProductAutoScroll from "./components/ProductList/ProductAutoScroll";
               <ProductBigCard product={products[0]} />
               <ProductBigCard product={products[1]}/>
             </div> */}
-            <CircularHomeCarousel />
+            <CircularHomeCarousel images={products} />
             <div className="bg-white absolute  left-0 w-full sm:container">
               <div className="flex justify-center items-center -mt-10 mb-8">
                 <div
