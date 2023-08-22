@@ -1,7 +1,7 @@
 "use client";
 import { faChevronLeft, faChevronRight, faClock, faHeart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Navigation, Pagination } from "swiper/modules";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -124,7 +124,7 @@ const products = [
   // More products...
 ];
 
-export default function Example() {
+const ProductAutoScroll = () => {
   return (
     <div className="bg-white relative">
       <Swiper
@@ -136,27 +136,32 @@ export default function Example() {
         // pagination={{
         //   clickable: true,
         // }}
+        loop={true}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
         navigation={{ nextEl: ".arrow-right", prevEl: ".arrow-left" }}
         // navigation={true}
-        modules={[Pagination, Navigation]}
+        modules={[Pagination, Navigation, Autoplay]}
         className="mySwiper first:px-4 sm:first:px-0"
       >
         {products.map((product) => (
-          <SwiperSlide>
+          <SwiperSlide className="border border-gray-300 shadow">
             <a key={product.id} href={product.href} className="group">
-              <div className="aspect-h-1 aspect-w-1 shadow-lg w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+              <div className="aspect-h-1 rounded-b-[25%] aspect-w-1 shadow-lg w-full overflow-hidden bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
                 <img
                   src={product.imageSrc}
                   alt={product.imageAlt}
                   className="h-full w-full object-cover object-center group-hover:opacity-75"
                 />
-                <div className=" absolute top-4  right-4 inline-block rounded-full text-white">
+                {/* <div className=" absolute top-4  right-4 inline-block rounded-full text-white">
                   <FontAwesomeIcon className="w-5 h-5" icon={faHeart} />
-                </div>
+                </div> */}
               </div>
-              <h3 className="mt-4 text-sm text-gray-400">{product.name}</h3>
-              <p className="mt-1 text-sm font-semibold text-gray-700">{product.name}</p>
-              <div className="flex gap-4 items-center">
+              <p className="mt-4 mb-2 text-lg line-clamp-1 font-semibold text-gray-700 text-center">{product.name}</p>
+              <h3 className="mb-4 text-lg text-gray-400 line-clamp-1 font-bold text-center">UPTO 60% OFF</h3>
+              {/* <div className="flex gap-4 items-center">
                 <p className="mt-1 text-base font-bold text-gray-900">
                   {product.price}
                 </p>
@@ -175,7 +180,7 @@ export default function Example() {
                   </div>
                   <p className="uppercase">First Buy Offer</p>
                 </div>
-              </div>
+              </div> */}
             </a>
           </SwiperSlide>
         ))}
@@ -191,3 +196,5 @@ export default function Example() {
     </div>
   );
 }
+
+export default ProductAutoScroll;
