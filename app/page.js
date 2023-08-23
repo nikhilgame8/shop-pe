@@ -9,6 +9,9 @@
   import { ShoppingBagIcon } from "@heroicons/react/24/outline";
 import SaleBanner from "./components/ProductList/SaleBanner";
 import ProductAutoScroll from "./components/ProductList/ProductAutoScroll";
+import FavoriteBrandsGrid from "./components/ProductList/FavoriteBrandsGrid";
+import ProductGrid from "./components/ProductList/ProductGrid";
+import Footer from "./components/Footer";
 
   const products = [
     {
@@ -180,13 +183,6 @@ import ProductAutoScroll from "./components/ProductList/ProductAutoScroll";
           </div>
           <AddressBar />
           <div className=" relative sm:container">
-            {/* <div className="w-[calc(100%-360px)]">
-              <CarouselTest />
-            </div>
-            <div className="flex flex-col justify-between">
-              <ProductBigCard product={products[0]} />
-              <ProductBigCard product={products[1]}/>
-            </div> */}
             <CircularHomeCarousel images={products} />
             <div className="bg-white absolute  left-0 w-full sm:container">
               <div className="flex justify-center items-center -mt-10 mb-8">
@@ -247,7 +243,18 @@ import ProductAutoScroll from "./components/ProductList/ProductAutoScroll";
                   <SecondaryHeading />
                   <Product />
                 </div>
+                <div className="h-2 w-full  bg-gray-100 shadow-inner"></div>
+                <div className="w-full my-8">
+                  <SecondaryHeading />
+                  <FavoriteBrandsGrid data={products} />
+                </div>
+                <div className="h-2 w-full  bg-gray-100 shadow-inner"></div>
+                <div className="w-full my-8">
+                  <SecondaryHeading />
+                  <ProductGrid />
+                </div>
               </div>
+              <Footer />
             </div>
           </div>
         </main>

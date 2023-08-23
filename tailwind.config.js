@@ -15,6 +15,7 @@ module.exports = {
       colors: {
         'themePurpleText': 'rgb(147 51 234)',
         'themeLightBgPurple': 'rgb(250 245 255)',
+        'themeHoverPurple': 'rgb(168 85 247)',
         // 'themePurpleText': '#243c5a',
       },
       keyframes: {

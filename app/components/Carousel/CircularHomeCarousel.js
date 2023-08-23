@@ -62,24 +62,28 @@ const CircularHomeCarousel = ({ images }) => {
             >
               {images.map((product, index) => (
                 <SwiperSlide className="bg-themePurpleText bg-opacity-50 border-2 border-white">
-                  <a key={product.id} href={product.href} className="group flex flex-col items-center ">
-                    {/* <div className="aspect-h-1 aspect-w-1 shadow-lg w-full overflow-hidden bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+                  <div key={product.id} className="h-60">
+                    <a
+                      href={product.href}
+                      className="group flex flex-col items-center "
+                    >
+                      <div className="w-36  h-36 -mt-20 mb-4 rounded-lg image-top-to-bottom-animate shadow-lg  overflow-hidden bg-gray-200">
                       <img
                         src={product.imageSrc}
                         alt={product.imageAlt}
                         className="h-full w-full object-cover object-center group-hover:opacity-75"
                       />
-                    </div> */}
-                    <div className="uppercase text-[8px] text-white bg-gray-700 inline-block px-1 border border-white">
-                      Featured
                     </div>
-                    <h3 className="mt-4 text-center text-sm text-gray-400">
-                      {product.name}
-                    </h3>
-                    <p className="mt-1 text-sm text-center font-semibold text-gray-900">
-                      {product.name}
-                    </p>
-                    {/* <div className="flex gap-4 items-center">
+                      <div className="uppercase mb-4 text-[8px] text-white bg-gray-700 inline-block px-1 border border-white">
+                        Featured
+                      </div>
+                      <h3 className="mt-4 text-center text-sm text-gray-400 px-2">
+                        {product.name}
+                      </h3>
+                      <p className="mt-1 text-sm text-center font-semibold text-gray-900 px-2">
+                        {product.name}
+                      </p>
+                      {/* <div className="flex gap-4 items-center">
                       <p className="mt-1 text-base font-bold text-gray-900">
                         {product.price}
                       </p>
@@ -90,7 +94,7 @@ const CircularHomeCarousel = ({ images }) => {
                         {product.price}
                       </p>
                     </div> */}
-                    {/* <div className=" text-white bg-themePurpleText mt-1 text-xs inline-block py-1 px-2">
+                      {/* <div className=" text-white bg-themePurpleText mt-1 text-xs inline-block py-1 px-2">
                       <div className="flex gap-2 items-center font-medium">
                         <div>
                           <FontAwesomeIcon icon={faClock} />
@@ -98,23 +102,14 @@ const CircularHomeCarousel = ({ images }) => {
                         <p className="uppercase">First Buy Offer</p>
                       </div>
                     </div> */}
-                  </a>
+                    </a>
+                  </div>
                 </SwiperSlide>
               ))}
             </Swiper>
           </div>
         </div>
       </div>
-      {/* <div className="absolute top-[45%] sm:top-[50%] bottom-0 w-full left-0 flex justify-center container">
-        <div className="ciclegraph w-[500px] h-[500px]" ref={graph}>
-          <div className="circle" />
-          <div className="circle" />
-          <div className="circle" />
-          <div className="circle" />
-          <div className="circle" />
-          <div className="circle" />
-        </div>
-      </div> */}
     </div>
   );
 };

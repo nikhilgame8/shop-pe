@@ -36,7 +36,7 @@ const Navbar = () => {
                   )}
                 </Disclosure.Button>
               </div>
-              <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+              <div className="flex flex-1 items-center gap-2 justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
                   <img
                     className="h-8 w-auto"
@@ -44,6 +44,9 @@ const Navbar = () => {
                     alt="Your Company"
                   />
                 </div>
+                <span class="self-center text-lg font-semibold whitespace-nowrap ">
+                ShopPe
+              </span>
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
                     {navigation.map((item) => (
@@ -147,7 +150,7 @@ const Navbar = () => {
                   className={classNames(
                     item.current
                       ? "bg-themePurpleText text-white"
-                      : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                      : "text-gray-500 hover:bg-themeLightBgPurple-700 hover:text-themePurpleText",
                     "block rounded-md px-3 py-2 text-base font-medium"
                   )}
                   aria-current={item.current ? "page" : undefined}
